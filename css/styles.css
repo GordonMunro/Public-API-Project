@@ -3,8 +3,9 @@
 /* ============================================= */
 .avatar {
   border-radius: 50%;
-  height: 4em;
-  width: 4em;
+  height: 5em;
+  width: 5em;
+  margin-right: 0.8em;
 }
 
 /* ============================================= */
@@ -20,10 +21,23 @@
 /*              Card                             */
 /* ============================================= */
 .card {
-  max-width: 100%;
-  border: 2px solid lightgrey;
+  border: 2px solid #eee9e9;
+  border-radius: 0.3em;
   display: flex;
   align-items: center;
+  height: 7em;
+  padding: 1em;
+}
+
+.name {
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.email, .address {
+  color: #a19f9f;
+  font-size: 0.7em;
+  margin-bottom: 0.5em;
 }
 
 /* ============================================= */
@@ -424,10 +438,19 @@ template {
 /* ============================================= */
 * {
   font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   position: relative;
+}
+
+h1 {
+  font-size: 0.9em;
+  padding: 1em 0;
+  color: grey;
 }
 
 /*# sourceMappingURL=styles.css.map */

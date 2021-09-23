@@ -2,8 +2,19 @@
 /*              Card                             */
 /* ============================================= */
 .card {
-    max-width: 100%;
-    border: 2px solid lightgrey;
+    border: 2px solid rgb(238, 233, 233);
+    border-radius: .3em;
     display: flex;
     align-items: center;
+    height: 7em;
+    padding: 1em;
+}
+.name {
+    font-size: .8em;
+    margin-bottom: .5em;
+}
+.email, .address {
+    color: rgb(161, 159, 159);
+    font-size: .7em;
+    margin-bottom: .5em;
 }
