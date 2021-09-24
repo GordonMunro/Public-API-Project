@@ -4,8 +4,7 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
-const modalRight = document.querySelector('#right-arrow');
-const modalLeft = document.querySelector('#left-arrow');
+
 
 // fetch data from API
 fetch(urlAPI)
@@ -67,7 +66,6 @@ gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
         const card = e.target.closest(".card");
         const index = card.getAttribute('data-index');
-
         displayModal(index);
     }  
 });
@@ -75,9 +73,24 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
-modalRight.addEventListener('click', () => {
+
+overlay.addEventListener('click', (e) => {
     const modal = document.querySelector('.modal-index');
-    const index = modal.getAttribute('') 
+    const index = modal.getAttribute('data-index');
+    const modalRight = document.querySelector('#right-arrow');
+    const modalLeft = document.querySelector('#left-arrow');
+    if (e.target === modalRight && index === '11') {
+        displayModal(0);
+    } if (e.target === modalRight) {
+        let newIndex = parseInt(index) + 1;
+        displayModal(newIndex);
+    }
+    if (e.target === modalLeft && index === '0') {
+        displayModal(11);
+    } else if (e.target === modalLeft) {
+        let newIndex = parseInt(index) - 1;
+        displayModal(newIndex);
+    }
 });
 // Search Employees
 
@@ -98,5 +111,5 @@ const handleSearch = () => {
     }
 
 } 
-inputSearch.addEventListener
+
 
