@@ -45,3 +45,19 @@ hr {
     border: .1px solid rgb(231, 228, 228);
     width: 100%;
 }
+#left-arrow {
+    position: absolute;
+    left: 20px;
+    top: 150px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: lightgrey;
+}
+#right-arrow {
+    position: absolute;
+    right: 20px;
+    top: 150px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: lightgrey;
+}

@@ -4,6 +4,8 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+const modalRight = document.querySelector('#right-arrow');
+const modalLeft = document.querySelector('#left-arrow');
 
 // fetch data from API
 fetch(urlAPI)
@@ -35,6 +37,7 @@ function displayEmployees(employeeData) {
     });
     gridContainer.innerHTML = employeeHTML;
 }
+
 // display modal
 function displayModal(index) {
     let { name, dob, phone, email, location: { city, street, state, postcode }, picture } = employees[index];
@@ -42,11 +45,13 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
+    <div class="modal-index" data-index="${index}">
         <img class="avatar" src="${picture.large}" alt="employee image" />
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
             <p class="email">${email}</p>
             <p class="address">${city}</p>
+            <span id="left-arrow"><</span><span id="right-arrow">></span>
             <hr />
             <p>${phone}</p>
             <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
@@ -64,46 +69,34 @@ gridContainer.addEventListener('click', e => {
         const index = card.getAttribute('data-index');
 
         displayModal(index);
-    }
+    }  
 });
 
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
-
+modalRight.addEventListener('click', () => {
+    const modal = document.querySelector('.modal-index');
+    const index = modal.getAttribute('') 
+});
 // Search Employees
+
 let inputSearch = document.querySelector('#search');
-let employeeName = document.querySelectorAll('.card h2');
+let employeeName = document.getElementsByClassName('name');
 
-const handleSearch = event => {
-    const searchTerm = event.target.value.toLowerCase();
-  
-    employeeName.forEach(boxData => {
-      const text = boxData.textContent.toLowerCase();
-      const box = boxData.parentElement.parentElement;
-  
-      if(text.includes(searchTerm)) {
-        box.style.display = "";
-      } else {
-        box.style.display = "none";
-      }
-    });
-  }
-  inputSearch.addEventListener('keyup', handleSearch);
-  
-
-// const handleSearch = () => {
-//     const searchTerm = inputSearch.value.toLowerCase();
+const handleSearch = () => {
+    let search = inputSearch.value.toLowerCase();
     
-//     employeeName.forEach(boxText => {
-//       const text = boxText.textContent.toLowerCase();
-//       const box = boxText.parentElement.parentElement;
-      
-//       if(text.includes(searchTerm)) {
-//         box.style.display = "block";
-//       } else {
-//         box.style.display = "none";  
-//       }
-//     })
-  
-//   };
+    for (i = 0; i < employeeName.length; i++) {
+        let dataCap = employeeName[i].innerHTML.toLowerCase();
+        if (!dataCap.includes(search)) {
+            employeeName[i].parentNode.parentNode.style.display = "none";
+        }
+        else {
+            employeeName[i].parentNode.parentNode.style.display = "flex";
+        }       
+    }
+
+} 
+inputSearch.addEventListener
+
