@@ -82,7 +82,7 @@ overlay.addEventListener('click', (e) => {
     let newIndex;
     if (e.target === modalRight && index === '11') {
         displayModal(0);
-    } if (e.target === modalRight) {
+    } else if (e.target === modalRight) {
         newIndex = parseInt(index) + 1;
         displayModal(newIndex);
     }
