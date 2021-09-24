@@ -392,6 +392,7 @@ h1 {
   align-items: center;
   height: 7em;
   padding: 1em;
+  cursor: pointer;
 }
 
 .name {
@@ -500,7 +501,7 @@ hr {
 /* ============================================= */
 /*              Media Queries                           */
 /* ============================================= */
-@media (min-width: 768px) {
+@media (min-width: 940px) {
   header {
     flex-direction: row;
   }
