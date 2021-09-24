@@ -501,7 +501,7 @@ hr {
 /* ============================================= */
 /*              Media Queries                           */
 /* ============================================= */
-@media (min-width: 940px) {
+@media (min-width: 945px) {
   header {
     flex-direction: row;
   }
