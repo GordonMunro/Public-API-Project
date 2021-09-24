@@ -11,7 +11,8 @@
     background: rgba(100, 100, 100, 0.4);
 }
 .modal {
-    max-width: 375px;
+    max-width: 290px;
+    height: 320px;
     margin: 15% auto auto;
     position: relative;
     text-align: center;
@@ -19,13 +20,28 @@
     border: 1px solid #778;
     border-radius: 5px;
     padding: 2em 1.5em;
+    border: 1px solid lightgrey;
+    p {
+        margin: .8em 0;
+        color: rgb(161, 159, 159);
+        font-size: .7em;
+    }
 }
 .modal-close {
     position: absolute;
     right: 15px;
     top: 5px;
     cursor: pointer;
+    border: none;
+    background: none;
+    font-size: .6em;
+    font-weight: 600;
 }
 .hidden {
     display: none;
+}
+hr {
+    margin: 1em 0;
+    border: .1px solid rgb(231, 228, 228);
+    width: 100%;
 }

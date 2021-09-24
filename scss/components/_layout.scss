@@ -6,3 +6,15 @@
     width: 100%;
     max-width: 1000px;
 }
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 1.6em;
+}
+#search {
+    padding: .5em 1em;
+    border: 1px solid lightgrey;
+    outline: none;
+    border-radius: 5px;
+}

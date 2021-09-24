@@ -26,7 +26,7 @@ function displayEmployees(employeeData) {
         <div class="card" data-index="${index}">
             <img class="avatar" src="${picture.large}" alt="employee-image">
             <div class="text-container">
-                <h2 class="name">${name.first} ${name.last}</h2>
+                <h2 class="name employee-name">${name.first} ${name.last}</h2>
                 <p class="email">${email}</p>
                 <p class="address">${city}</p>
             </div>
@@ -49,7 +49,7 @@ function displayModal(index) {
             <p class="address">${city}</p>
             <hr />
             <p>${phone}</p>
-            <p class="address">${street}, ${state} ${postcode}</p>
+            <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
             <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
     `;
@@ -70,3 +70,40 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+// Search Employees
+let inputSearch = document.querySelector('#search');
+let employeeName = document.querySelectorAll('.card h2');
+
+const handleSearch = event => {
+    const searchTerm = event.target.value.toLowerCase();
+  
+    employeeName.forEach(boxData => {
+      const text = boxData.textContent.toLowerCase();
+      const box = boxData.parentElement.parentElement;
+  
+      if(text.includes(searchTerm)) {
+        box.style.display = "";
+      } else {
+        box.style.display = "none";
+      }
+    });
+  }
+  inputSearch.addEventListener('keyup', handleSearch);
+  
+
+// const handleSearch = () => {
+//     const searchTerm = inputSearch.value.toLowerCase();
+    
+//     employeeName.forEach(boxText => {
+//       const text = boxText.textContent.toLowerCase();
+//       const box = boxText.parentElement.parentElement;
+      
+//       if(text.includes(searchTerm)) {
+//         box.style.display = "block";
+//       } else {
+//         box.style.display = "none";  
+//       }
+//     })
+  
+//   };
