@@ -79,16 +79,17 @@ overlay.addEventListener('click', (e) => {
     const index = modal.getAttribute('data-index');
     const modalRight = document.querySelector('#right-arrow');
     const modalLeft = document.querySelector('#left-arrow');
+    let newIndex;
     if (e.target === modalRight && index === '11') {
         displayModal(0);
     } if (e.target === modalRight) {
-        let newIndex = parseInt(index) + 1;
+        newIndex = parseInt(index) + 1;
         displayModal(newIndex);
     }
     if (e.target === modalLeft && index === '0') {
         displayModal(11);
     } else if (e.target === modalLeft) {
-        let newIndex = parseInt(index) - 1;
+        newIndex = parseInt(index) - 1;
         displayModal(newIndex);
     }
 });
