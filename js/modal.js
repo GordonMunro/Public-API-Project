@@ -94,7 +94,9 @@ overlay.addEventListener('click', (e) => {
     }
 });
 // Search Employees
-
+// NB I got a lot of help on this from the slack Office Hours and
+// https://www.w3schools.com/howto/howto_js_filter_lists.asp
+// https://www.geeksforgeeks.org/search-bar-using-html-css-and-javascript/
 let inputSearch = document.querySelector('#search');
 let employeeName = document.getElementsByClassName('name');
 
